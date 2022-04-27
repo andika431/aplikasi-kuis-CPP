@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".kuis"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvnokuis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Question 1/n"
+        android:textSize="60px"
+        android:textStyle="italic"
+        android:paddingLeft="60px"
+        android:layout_marginTop="60px"/>
+    <TextView
+        android:id="@+id/tvscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score : 0"
+        android:textSize="50px"
+        android:paddingLeft="60px"
+        android:layout_marginTop="20px"/>
+    <TextView
+        android:id="@+id/tvkuis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Siapakah penemu bahasa pemrograman C++"
+        android:textSize="50px"
+        android:paddingHorizontal="20sp"
+        android:layout_marginTop="20sp"/>
+    <RadioGroup
+        android:id="@+id/rgroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50px"
+        android:paddingHorizontal="20sp"
+        android:layout_marginTop="20sp">
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adolf Hitler"
+            android:textSize="45px"/>
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kang shyomay"
+            android:textSize="45px"/>
+        <RadioButton
+            android:id="@+id/rb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yoga (yoo gak tahu)"
+            android:textSize="45px"/>
+        <RadioButton
+            android:id="@+id/rb4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bjarne Stroustrup"
+            android:textSize="45px"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/btnnext1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="30sp"/>
+
+
+
+</LinearLayout>
