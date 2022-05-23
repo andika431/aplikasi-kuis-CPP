@@ -9,15 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class kuis extends AppCompatActivity {
-
+public class kuis1 extends AppCompatActivity {
     private TextView tvkuis, tvscore, tvkuisNo;
     private RadioGroup radioGroup;
     private RadioButton rb1, rb2, rb3, rb4;
@@ -36,7 +34,7 @@ public class kuis extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kuis);
+        setContentView(R.layout.activity_kuis1);
         questionlist = new ArrayList<>();
         tvkuis = findViewById(R.id.tvkuis);
         tvscore = findViewById(R.id.tvscore);
@@ -63,7 +61,7 @@ public class kuis extends AppCompatActivity {
                         checkAnswer();
                     }
                     else{
-                        Toast.makeText(kuis.this, "silahkan pilih opsi jawaban", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(kuis1.this, "silahkan pilih opsi jawaban", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else{
@@ -72,7 +70,6 @@ public class kuis extends AppCompatActivity {
             }
         });
     }
-
     private void checkAnswer() {
         answered = true;
         RadioButton rbSelected = findViewById(radioGroup.getCheckedRadioButtonId());
@@ -120,12 +117,12 @@ public class kuis extends AppCompatActivity {
         answered = false;
 
         if (qCounter < totalkuis){
-           currentkuis = questionlist.get(qCounter);
-           tvkuis.setText(currentkuis.getKuis());
-           rb1.setText(currentkuis.getOpsi1());
-           rb2.setText(currentkuis.getOpsi2());
-           rb3.setText(currentkuis.getOpsi3());
-           rb4.setText(currentkuis.getOpsi4());
+            currentkuis = questionlist.get(qCounter);
+            tvkuis.setText(currentkuis.getKuis());
+            rb1.setText(currentkuis.getOpsi1());
+            rb2.setText(currentkuis.getOpsi2());
+            rb3.setText(currentkuis.getOpsi3());
+            rb4.setText(currentkuis.getOpsi4());
         }
         else {
             finish();
@@ -133,16 +130,6 @@ public class kuis extends AppCompatActivity {
     }
 
     private void addQuestionlist() {
-        questionlist.add(new modelkuis("Berikut Sintak yang benar untuk menghasilkan output ‘Hello World’ di C++ ?", "cout<<“Hello World”;", "print<<“Hello World”;", "echo “Hello World”;", "System.out.print(“Hello World”);", 1));
-        questionlist.add(new modelkuis("Berikut Sintak yang benar untuk menghasilkan output ‘Hello World’ di C++ ?", "cout<<“Hello World”;", "print<<“Hello World”;", "echo “Hello World”;", "System.out.print(“Hello World”);", 1));
-        questionlist.add(new modelkuis("Bagaimana cara membuat komentar di C++ ?", "/* Ini komentar", "# Ini komentar", "// Ini komentar", "< Ini komentar >",3));
-        questionlist.add(new modelkuis("Setiap perintah di dalam C++ selalu diakhiri dengan tanda?", ".", "#", ":", ";",4));
-        questionlist.add(new modelkuis("Tipe data apa yang digunakan untuk menyimpan variabel dengan nilai teks?", "string", "String", "txt", "Text",1));
-        questionlist.add(new modelkuis("Dibawah ini adalah cara yang tepat untuk deklarasi variabel bilangan dengan tipe integer di C++!", "bilangan int;", "var bilangan;", "int bilangan;", "$bilangan;",3));
-        questionlist.add(new modelkuis("Tipe data yang digunakan untuk bilangan pecahan adalah ?", "Char", "String", "integer", "Double",4));
-        questionlist.add(new modelkuis("Tipe data yang digunakan untuk bilangan bulat adalah?", "Char", "String", "integer", "Double",3));
-        questionlist.add(new modelkuis("Dibawah ini merupakan tipe data numerik kecuali ...", "Char", "String", "integer", "Double",1));
-        questionlist.add(new modelkuis("Untuk melakukan operasi perkalian maka harus menggunakan operator?", "Operator pembanding", "Operator Relasi", "Operator Aritmatika", "Operator Logika",3));
         questionlist.add(new modelkuis("Operator pembanding digunakan untuk melakukan?", "Penjumlahan antara dua nilai", "Kombinasi antara dua nilai", "Hubungan antara dua nilai ", "Perbandingan antara dua nilai",4));
         questionlist.add(new modelkuis("Berikut ini adalah operator increment dan decrement adalah...", "++ dan --", "++ dan **", "|| dan &&", "-- dan !!",1));
         questionlist.add(new modelkuis("Berikut ini bentuk jenis perulangan di C++ Kecuali...", "For", "While", "Do While", "Switch",4));
@@ -154,6 +141,16 @@ public class kuis extends AppCompatActivity {
         questionlist.add(new modelkuis("Method atau fungsi yang digunakan untuk mendapatkan panjang string adalah ?", "getZise()", "length()", "len()", "getLen()",2));
         questionlist.add(new modelkuis("Untuk mendeklarasikan array di C++ di tandai dengan tanda?", "{}", "||", "[]", "()",3));
         questionlist.add(new modelkuis("Bagaimana cara membuat fungsi di C++?", "namaFungsi[]", "namaFungsi()", "(namaFungsi)", "function namaFungsi",2));
+        questionlist.add(new modelkuis("Berikut Sintak yang benar untuk menghasilkan output ‘Hello World’ di C++ ?", "cout<<“Hello World”;", "print<<“Hello World”;", "echo “Hello World”;", "System.out.print(“Hello World”);", 1));
+        questionlist.add(new modelkuis("Berikut Sintak yang benar untuk menghasilkan output ‘Hello World’ di C++ ?", "cout<<“Hello World”;", "print<<“Hello World”;", "echo “Hello World”;", "System.out.print(“Hello World”);", 1));
+        questionlist.add(new modelkuis("Bagaimana cara membuat komentar di C++ ?", "/* Ini komentar", "# Ini komentar", "// Ini komentar", "< Ini komentar >",3));
+        questionlist.add(new modelkuis("Setiap perintah di dalam C++ selalu diakhiri dengan tanda?", ".", "#", ":", ";",4));
+        questionlist.add(new modelkuis("Tipe data apa yang digunakan untuk menyimpan variabel dengan nilai teks?", "string", "String", "txt", "Text",1));
+        questionlist.add(new modelkuis("Dibawah ini adalah cara yang tepat untuk deklarasi variabel bilangan dengan tipe integer di C++!", "bilangan int;", "var bilangan;", "int bilangan;", "$bilangan;",3));
+        questionlist.add(new modelkuis("Tipe data yang digunakan untuk bilangan pecahan adalah ?", "Char", "String", "integer", "Double",4));
+        questionlist.add(new modelkuis("Tipe data yang digunakan untuk bilangan bulat adalah?", "Char", "String", "integer", "Double",3));
+        questionlist.add(new modelkuis("Dibawah ini merupakan tipe data numerik kecuali ...", "Char", "String", "integer", "Double",1));
+        questionlist.add(new modelkuis("Untuk melakukan operasi perkalian maka harus menggunakan operator?", "Operator pembanding", "Operator Relasi", "Operator Aritmatika", "Operator Logika",3));
 
     }
 }

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KuisCpp">
         <activity
+            android:name=".kuis1"
+            android:exported="true" />
+        <activity
+            android:name=".ksoal"
+            android:exported="true" />
+        <activity
             android:name=".kuis"
             android:exported="true" />
         <activity

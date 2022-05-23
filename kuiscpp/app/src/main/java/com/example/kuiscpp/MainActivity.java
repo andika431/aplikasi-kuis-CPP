@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         btnstart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, kuis.class);
+                Intent intent = new Intent(MainActivity.this, ksoal.class);
                 startActivity(intent);
             }
         });
