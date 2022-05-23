@@ -23,5 +23,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnexit = findViewById(R.id.btnexit);
+        btnexit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }
