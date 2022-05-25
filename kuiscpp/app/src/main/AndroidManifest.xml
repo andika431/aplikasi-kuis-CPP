@@ -10,6 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KuisCpp">
         <activity
+            android:name=".score"
+            android:exported="true" />
+        <activity
+            android:name=".kuis9"
+            android:exported="true" />
+        <activity
+            android:name=".kuis8"
+            android:exported="true" />
+        <activity
+            android:name=".kuis7"
+            android:exported="true" />
+        <activity
+            android:name=".kuis6"
+            android:exported="true" />
+        <activity
+            android:name=".kuis5"
+            android:exported="true" />
+        <activity
+            android:name=".kuis4"
+            android:exported="true" />
+        <activity
+            android:name=".kuis3"
+            android:exported="true" />
+        <activity
+            android:name=".kuis2"
+            android:exported="true" />
+        <activity
             android:name=".kuis1"
             android:exported="true" />
         <activity

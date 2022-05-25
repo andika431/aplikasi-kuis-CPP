@@ -78,7 +78,7 @@ public class kuis extends AppCompatActivity {
         RadioButton rbSelected = findViewById(radioGroup.getCheckedRadioButtonId());
         int answerNo = radioGroup.indexOfChild(rbSelected)+1;
         if(answerNo == currentkuis.getCorrectansNo()){
-            score++;
+            score ++;
             tvscore.setText("Score : "+score);
         }
         rb1.setTextColor(Color.RED);

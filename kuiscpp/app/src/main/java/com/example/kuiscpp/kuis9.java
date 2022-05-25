@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class kuis1 extends AppCompatActivity {
+public class kuis9 extends AppCompatActivity {
     private TextView tvkuis, tvscore, tvkuisNo;
     private RadioGroup radioGroup;
     private RadioButton rb1, rb2, rb3, rb4;
@@ -34,7 +34,7 @@ public class kuis1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kuis1);
+        setContentView(R.layout.activity_kuis9);
         questionlist = new ArrayList<>();
         tvkuis = findViewById(R.id.tvkuis);
         tvscore = findViewById(R.id.tvscore);
@@ -61,7 +61,7 @@ public class kuis1 extends AppCompatActivity {
                         checkAnswer();
                     }
                     else{
-                        Toast.makeText(kuis1.this, "silahkan pilih opsi jawaban", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(kuis9.this, "silahkan pilih opsi jawaban", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else{
@@ -70,12 +70,13 @@ public class kuis1 extends AppCompatActivity {
             }
         });
     }
+
     private void checkAnswer() {
         answered = true;
         RadioButton rbSelected = findViewById(radioGroup.getCheckedRadioButtonId());
         int answerNo = radioGroup.indexOfChild(rbSelected)+1;
         if(answerNo == currentkuis.getCorrectansNo()){
-            score++;
+            score ++;
             tvscore.setText("Score : "+score);
         }
         rb1.setTextColor(Color.RED);
@@ -96,7 +97,7 @@ public class kuis1 extends AppCompatActivity {
                 rb4.setTextColor(Color.GREEN);
                 break;
         }
-        if (qCounter <= totalkuis){
+        if (qCounter < totalkuis){
             btnnext.setText("Next");
         }else{
             btnnext.setText("finish");
@@ -116,7 +117,7 @@ public class kuis1 extends AppCompatActivity {
         tvkuisNo.setText("question = "+qCounter+"/"+totalkuis);
         answered = false;
 
-        if (qCounter <= totalkuis){
+        if (qCounter < totalkuis){
             currentkuis = questionlist.get(qCounter);
             tvkuis.setText(currentkuis.getKuis());
             rb1.setText(currentkuis.getOpsi1());
@@ -130,27 +131,28 @@ public class kuis1 extends AppCompatActivity {
     }
 
     private void addQuestionlist() {
-        questionlist.add(new modelkuis("Operator pembanding digunakan untuk melakukan?", "Penjumlahan antara dua nilai", "Kombinasi antara dua nilai", "Hubungan antara dua nilai ", "Perbandingan antara dua nilai",4));
-        questionlist.add(new modelkuis("Berikut ini adalah operator increment dan decrement adalah...", "++ dan --", "++ dan **", "|| dan &&", "-- dan !!",1));
-        questionlist.add(new modelkuis("Berikut ini bentuk jenis perulangan di C++ Kecuali...", "For", "While", "Do While", "Switch",4));
-        questionlist.add(new modelkuis("Berikut ini manakah yang termasuk bentuk umum perulangan for...", "for (inisialisasi; syarat; modifier) pernyataan;", "for (syarat; inisialisasi; modifier) pernyataan;", "for (modifier; syarat; inisialisasi) pernyataan;", "Semua opsi salah",1));
-        questionlist.add(new modelkuis("Fungsi yang dapat menghentikan program (secara normal) menggunakan fungsi?", "break()", "close()", "exit()", "goto()",3));
-        questionlist.add(new modelkuis("Berikut adalah file header yang berfungsi untuk menangani input/output di C++?", "#include < stream >", "#include < iostream >", "#include < conio.h >", "#include < iostring >",2));
-        questionlist.add(new modelkuis("Berikut adalah cara yang benar untuk mendeklarasikan array di C++ !", "int nilai{10};", "int nilai[10];", "int [] nilai = new int[10];", "int nilai;",2));
-        questionlist.add(new modelkuis("Bentuk umum perulangan do while adalah...", "while (kondisi) pernyataan;", "do {pernyataan} while (kondisi);", "while (do) {pernyataan}", "do (pernyataan) while (kondisi)",2));
-        questionlist.add(new modelkuis("Method atau fungsi yang digunakan untuk mendapatkan panjang string adalah ?", "getZise()", "length()", "len()", "getLen()",2));
-        questionlist.add(new modelkuis("Untuk mendeklarasikan array di C++ di tandai dengan tanda?", "{}", "||", "[]", "()",3));
-        questionlist.add(new modelkuis("Bagaimana cara membuat fungsi di C++?", "namaFungsi[]", "namaFungsi()", "(namaFungsi)", "function namaFungsi",2));
-        questionlist.add(new modelkuis("Berikut Sintak yang benar untuk menghasilkan output ‘Hello World’ di C++ ?", "cout<<“Hello World”;", "print<<“Hello World”;", "echo “Hello World”;", "System.out.print(“Hello World”);", 1));
-        questionlist.add(new modelkuis("Berikut Sintak yang benar untuk menghasilkan output ‘Hello World’ di C++ ?", "cout<<“Hello World”;", "print<<“Hello World”;", "echo “Hello World”;", "System.out.print(“Hello World”);", 1));
-        questionlist.add(new modelkuis("Bagaimana cara membuat komentar di C++ ?", "/* Ini komentar", "# Ini komentar", "// Ini komentar", "< Ini komentar >",3));
-        questionlist.add(new modelkuis("Setiap perintah di dalam C++ selalu diakhiri dengan tanda?", ".", "#", ":", ";",4));
-        questionlist.add(new modelkuis("Tipe data apa yang digunakan untuk menyimpan variabel dengan nilai teks?", "string", "String", "txt", "Text",1));
+        questionlist.add(new modelkuis("B?", "c;", "p;", "e;", "S;", 1));
         questionlist.add(new modelkuis("Dibawah ini adalah cara yang tepat untuk deklarasi variabel bilangan dengan tipe integer di C++!", "bilangan int;", "var bilangan;", "int bilangan;", "$bilangan;",3));
         questionlist.add(new modelkuis("Tipe data yang digunakan untuk bilangan pecahan adalah ?", "Char", "String", "integer", "Double",4));
         questionlist.add(new modelkuis("Tipe data yang digunakan untuk bilangan bulat adalah?", "Char", "String", "integer", "Double",3));
         questionlist.add(new modelkuis("Dibawah ini merupakan tipe data numerik kecuali ...", "Char", "String", "integer", "Double",1));
         questionlist.add(new modelkuis("Untuk melakukan operasi perkalian maka harus menggunakan operator?", "Operator pembanding", "Operator Relasi", "Operator Aritmatika", "Operator Logika",3));
+        questionlist.add(new modelkuis("Tipe data yang digunakan untuk menghasilkan nilai TRUE dan FALSE adalah?", "integer", "booelan", "double", "float", 2));
+        questionlist.add(new modelkuis("Di bawah ini adalah salah satu contoh operator pembanding...", "**", "%", "||", "==", 4));
+        questionlist.add(new modelkuis("Di bawah ini contoh operator logika, kecuali ?", "&&", "||", "**", "!", 3));
+        questionlist.add(new modelkuis("Berikut adalah bentuk umum perulangan for, yaitu...", "for (inisialisasi; syarat; modifier) pernyataan;", "for (syarat; inisialisasi; modifier) pernyataan;", "for (modifier; syarat; inisialisasi) pernyataan;", "Semuanya salah", 1));
+        questionlist.add(new modelkuis("Berikut adalah pernyataan yang digunakan untuk menghentikan perulangan...", "stop", "break", "exit", "return", 2));
+        questionlist.add(new modelkuis("Pernyataan yang sesuai untuk mendefinisikan tipe data bilangan adalah...", "Tipe data yang berfungsi menampung data yang memiliki angka di belakang koma", "Tipe data yang digunakan untuk angka yang tidak memiliki angka bulat di belakang koma", "Tipe data yang menyimpan lebih dari satu variabel", "Data yang mempresentasikan data berupa karakter", 3));
+        questionlist.add(new modelkuis("Perintah Cin pada Program C++ digunakan untuk...", "Data pada layar", "Menginput suatu nilai dari suatu piranti masukan (keyboard)", "Pendeklarasian variabel", "Mengulang proses looping pada program", 2));
+        questionlist.add(new modelkuis("Pengertian dari konstanta adalah...", "Suatu nilai yang dapat diubah selama program ", "Suatu nilai yang berubah-ubah selama program berlangsung", "Suatu nilai yang tidak dapat diubah selama program berlangsung", "Suatu nilai yang tidak dapat diubah meskipun program tidak berjalan", 3));
+        questionlist.add(new modelkuis("Misalkan suatu variabel string katakanlah kalimat [30] akan diberi nilai \"SAYA BELAJAR C++\", maka perintah yang benar adalah...", "char kalimat [30] = \"SAYA BELAJAR C++\"", "char kalimat [30] = \"SAYA BELAJAR C++\";", "charter kalimat[30] = \"SAYA BELAJAR C++\"", "charter kalimat [30] = \"SAYA BELAJAR C++\";", 2));
+        questionlist.add(new modelkuis("Penggunaan operator aritmatika yang benar dalam C++ yaitu...", "While(i<=30);", "T = x + angka;", "I++;", "T = x + angka", 2));
+        questionlist.add(new modelkuis("C merupakan bahasa pendahulu dari C++ yang termasuk dalam bahasa pemograman tingkat menengah dan diciptakan pada tahun 1972 oleh …", "Brian W. Kernighan", "Dennis M. Ritchie", "Jawaban A dan B benar", "Salah semua", 3));
+        questionlist.add(new modelkuis("Bahasa pemograman C++ diciptakan satu decade setelah C yaitu pada tahun 1983 dari Laboratorium Bell, AT&T oleh …", "Bjarne Stroustroup", "Brian W. Kernighan", "Robert Stuart", "Brian Stroustroup", 1));
+        questionlist.add(new modelkuis("Nama C++ diberinama oleh Rick Mascitti dengan tanda ++ yang berasal dari operator increment pada bahasa C. Pada awal mulanya C++ diberi nama …", "“A better C”", "+C+", "Turbo C", "Borland C", 1));
+        questionlist.add(new modelkuis("Pengenal (identifier) adalah suatu nama yang biasa dipakai dalam pemrograman untuk menyatakan variabel, konstanta, tipe data, dan fungsi. Berikut yang bukan merupakan bentuk aturan dalam penulisan identifier adalah ….", "Tidak boleh menggunakan reserved words yang ada dalam C++.", "Tidak boleh ada spasi", "Tidak boleh menggunakan karakter-karakter\n" +
+                "~ ! @ # $ % ^ & * ( ) + ` - = { } [ ] : \" ; ' < > ? , . / |\n", "Tidak boleh dimulai dengan karakter huruf", 4));
+        questionlist.add(new modelkuis("Salah satu tipe data yang ada dalam pemrograman C++ adalah unsigned yaitu ….", "Tipe data unsigned nilainya selalu negatif", "Tipe data unsigned nilainya selalu posisif", "Tipe data unsigned nilainya tidak tetap", "Tipe data unsigned nilainya selalu berubah", 2));
 
     }
 }
